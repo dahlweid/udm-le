@@ -110,6 +110,15 @@ If you use Loopia as your DNS provider, set your `DNS_PROVIDER` to `loopia` and 
 * removeZoneRecord
 * removeSubdomain
 
+### Manual DNS
+
+If you can manually edit your DNS settings, set `DNS_PROVIDER` to `manual` to configure a temporary TXT record for your DNS settings.
+
+While executing `/data/udm-le/udm-le.sh initial` LEGO will prompt you to create a temporary TXT record for `_acme-challenge` in your DNS setup. 
+The required value for this record is displayed on the command line. 
+The script will stop until you have made the required change and continues with issuing the certificate once the validation completed. 
+You can then again delete the newly created TXT record.
+
 ### Name.com
 
 Follow [these instructions](https://www.name.com/support/articles/360007597874-signing-up-for-api-access) from name.com support to enable api access.
